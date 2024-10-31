@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400, 700, 800;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 80%;
+    width: 80%;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 4rem 0;
+}
+
+.left,
+.right {
+    flex: 1;
+}
+
+.left {
+    padding: 4rem;
+}
+
+.left h1 {
+    font-size: 4rem;
+    padding-bottom: 1.5rem;
+}
+
+.left h3 {
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+}
+
+.left article {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.left article img {
+    width: 20px;
+    margin-right: 1rem;
+}
+
+.form-section {
+    text-align: left;
+    padding-top: 2rem;
+}
+
+.form-section input[type="text"] {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    border: 1px solid hsl(231, 7%, 60%);
+    color: hsl(231, 7%, 60%);
+}
+
+.form-section input[type="submit"],
+.form-section button {
+    margin-top: 1.5rem;
+    padding: 1rem 6.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    background-color: black;
+    transition: box-shadow 0.1s ease;
+    cursor: pointer;
+}
+
+.form-section button:hover {
+    background: linear-gradient(to right, hsl(4, 100%, 67%), orange);
+    box-shadow: 0 2px 15px hsl(4, 100%, 67%);
+    cursor: pointer;
+}
+
+
+.error-message {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.right {
+    padding: 1rem 0;
+}

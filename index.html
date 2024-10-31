@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  <title>Newsletter sign-up form with success message</title>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left">
+      <h1>Stay updated!</h1>
+      <h3>Join 60,000+ product managers receiving monthly updates on:</h3>
+
+      <article>
+        <img src="./assets/images/icon-list.svg" alt="" />
+        <p>Product discovery and building what matters</p>
+      </article>
+
+      <article>
+        <img src="./assets/images/icon-list.svg" alt="" />
+        <p>Measuring to ensure updates are a success</p>
+      </article>
+
+      <article>
+        <img src="./assets/images/icon-list.svg" alt="" />
+        <p>And much more!</p>
+      </article>
+
+      <div class="form-section">
+        <form id="newsletterForm" action="#">
+          <label for="email">Email address:</label><br>
+          <input type="text" id="email" name="Email address" placeholder="email@company.com">
+          <div id="error-message" class="error-message"></div> <!-- ข้อความแสดงข้อผิดพลาด -->
+          <button type="submit">Subscribe to monthly newsletter</button>
+        </form>
+
+
+        <script>
+          document.getElementById('newsletterForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // ป้องกันการส่งฟอร์มตามปกติ
+
+            const emailInput = document.getElementById('email').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // ตรวจสอบอีเมล
+            if (!emailInput.includes('@')) {
+              errorMessage.textContent = 'Valid email required'; // แสดงข้อความข้อผิดพลาด
+              errorMessage.style.color = 'red'; // เปลี่ยนสีข้อความเป็นแดง
+              document.getElementById('email').style.borderColor = 'red'; // เปลี่ยนสีกรอบเป็นแดง
+              return;
+            }
+
+            // ถ้าอีเมลถูกต้อง
+            errorMessage.textContent = ''; // ล้างข้อความข้อผิดพลาด
+            document.getElementById('email').style.borderColor = ''; // คืนค่าสีกรอบ
+
+            // บันทึกอีเมลใน localStorage
+            localStorage.setItem('email', emailInput);
+
+            window.location.href = 'subcrib.html';
+          });
+        </script>
+
+
+      </div>
+    </div>
+
+    <div class="right">
+      <img src="./assets/images/illustration-sign-up-desktop.svg" alt="" />
+    </div>
+  </div>
+
+</body>
+
+</html>
